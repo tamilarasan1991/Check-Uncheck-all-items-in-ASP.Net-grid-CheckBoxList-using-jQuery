@@ -1,0 +1,57 @@
+ <asp:GridView ID="DGAssessment_copy" runat="server" CellSpacing="0" CellPadding="0" AutoGenerateColumns="false" AllowPaging="false"
+                                EmptyDataText=" " SkinID="GrdFixed" ShowHeaderWhenEmpty="true" Width="100%">
+                                <Columns>
+                                                    
+                                    <asp:TemplateField>
+                                        <HeaderTemplate>
+                                            <asp:CheckBox ID="chkHeader" runat="server" Text="Select/Deselect All" />
+                                    
+                                        </HeaderTemplate>
+                                        <ItemTemplate>
+                                            <asp:CheckBox ID="chkRow" runat="server" Text=" " />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+
+                                </Columns>
+                            </asp:GridView>
+ 
+ 
+  
+ 
+ 
+ 
+ <script type="text/javascript">
+        
+   <!--
+    $(function () {
+        $("[id*=chkHeader]").bind("click", function () {
+            var chkHeader = $(this);
+            var grid = $(this).closest("table");
+            $("input[type=checkbox]", grid).each(function () {
+                if (chkHeader.is(":checked")) {
+                    $(this).prop("checked", true);
+                    $("td", $(this).closest("tr")).addClass("selected");
+                } else {
+                    $(this).prop("checked", false);
+                    $("td", $(this).closest("tr")).removeClass("selected");
+                }
+            });
+        });
+        $("[id*=chkRow]").bind("click", function () {
+            var grid = $(this).closest("table");
+            var chkHeader = $("[id*=chkHeader]", grid);
+            if (!$(this).is(":checked")) {
+                $("td", $(this).closest("tr")).removeClass("selected");
+                chkHeader.prop("checked", false);
+            } else {
+                $("td", $(this).closest("tr")).addClass("selected");
+                if ($("[id*=chkRow]", grid).length == $("[id*=chkRow]:checked", grid).length) {
+                    chkHeader.prop("checked", true);
+                }
+            }
+        });
+    });
+    //-->
+
+         
+    </script>
